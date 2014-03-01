@@ -2,7 +2,7 @@
 //set default value for query
 $id = isset($_GET['id']) ? $_GET['id'] : null;
 
-$worldcatKey = 'B3F6fY0fdaYyWFaU2a5a25QD28BsxH6H8wZnViTESKxZZBR7Fg71nC0V6IeXa78EKAYsGzhMAyYyEihv';
+$worldcatKey = 'YOUR-WORLDCAT-API-KEY-HERE';
 
 $base = 'http://www.worldcat.org/webservices/catalog/content/isbn/'.$id.'?&recordSchema=info%3Asrw%2Fschema%2F1%2Fdc';
 $base .= '&wskey='. $worldcatKey;

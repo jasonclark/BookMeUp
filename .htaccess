@@ -1,0 +1,19 @@
+#make sure mod_rewrite is enabled for all rules below
+#Options +FollowSymLinks
+#RewriteEngine On
+#remove need to have .php extension in filename
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule ^(.*)$ $1.php [L,QSA]
+
+#make sure mod_rewrite is enabled for all rules below
+Options +FollowSymLinks
+RewriteEngine On
+
+#check for 200 header, legitimate url 
+RewriteCond %{ENV:REDIRECT_STATUS} 200
+RewriteRule .* - [L]
+
+#remove need to have .php extension in filename
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*)$ $1.php [L,QSA]

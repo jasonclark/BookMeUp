@@ -1,0 +1,126 @@
+/*Styles for mobile library site | Author: Jason A. Clark | Version: mobile 1.0, November 2009*/
+/* =global settings */
+html {overflow-y:scroll;}
+body {font:62.5% normal Helvetica, sans-serif;margin:0;padding:0;overflow-x:hidden;color:#444;}
+*, * focus {outline:none;margin:0;padding:0;}
+a:link {text-decoration:none; color:#444;}
+a:visited {text-decoration:none; color:#444;}
+/* =element-specific settings */
+#doc, #hd {width:100%;margin:0;padding:0;}
+#main {padding:15px 10px 0 10px;width:auto;min-height:200px;}
+#ft {margin:25px 0 0 0;width:auto;border-top:1px solid #ccc;}
+h1 {font:1.75em normal Helvetica, sans-serif;color:#fff;margin:0 0 5px 0;padding:10px 0 10px 27px;background:#063053 url("../img/book.png") 5px 50% no-repeat;}
+@media only screen and (max-device-width: 320px) { h1 {overflow:hidden;white-space:nowrap;text-overflow:ellipsis;} }
+h1 span {color:#fff;}
+h1 small{font:.3em normal Helvetica, sans-serif;text-transform:uppercase;letter-spacing:1em;color:#fff;}
+p.info {padding:0 10px;font-size:1.3em;}
+p.terms a {display:inline-block;margin:5px 5px 5px 0;padding:5px;}
+a.bck {font-size:1.1em;background:url("../img/bck-arrow.gif") no-repeat 0 .08em;margin:0;padding:0 0 0 16px;border:none;}
+a.fwd {font-size:1.1em;background:url("../img/fwd-arrow.gif") no-repeat 0 .08em;margin:0;padding:0 0 0 16px;border:none;}
+a.download {text-align:right;margin:0;padding:3px 3px 3px 17px;background:url("../img/download.gif") no-repeat center left;}
+a.amazon {line-height:16px;background:url("../img/amazon.png") 0 50% no-repeat;padding-left:18px;}
+a.citation {line-height:16px;background:url("../img/link.png") 0 50% no-repeat;padding-left:18px;}
+a.expand {text-align:right;margin:0;padding:3px 3px 3px 17px;background:url("../img/expand.gif") no-repeat center left;}
+/*a.site {float:left;width:auto;margin:0;padding:5px 5px 5px 18px;background:url("../img/site.gif") no-repeat center left;}*/
+a.worldcat {float:right;width:auto;margin:0;padding:5px 5px 5px 16px;background:url("../img/wc-badge.gif") no-repeat center left;}
+/*a.feed {float:right;width:auto;margin:0;padding:5px 5px 5px 18px;background:url("../img/feed.gif") no-repeat center left;}*/
+a.site {float:left;width:auto;margin:0;padding:5px 0;}
+a.about {float:right;width:auto;margin:0;padding:5px 0;}
+a.feed {float:right;width:auto;margin:0 10px 0 0;padding:5px 0;}
+#main h2 {padding:0 0 10px 0;font-size:1.4em;}
+#main h3 {padding:10px 0;}
+#main h2.result {padding:10px 0;font-size:1.4em;}
+#main h2.result strong {padding:2px 5px;background-color:#ffff66;}
+#main p {margin-left:5px;padding:5px;font-size:1.2em;}
+#main ul {margin-left:5px;padding:5px;font-size:1.2em;}
+#main li {margin-left:10px;padding-bottom:5px;}
+#main ul.item, #main ul.match {display:table;list-style:none;margin:0;padding:0;border-spacing:5px;}
+#main ul.item li, #main ul.match li {display:table-row;-webkit-border-radius:10px;-moz-border-radius:10px;border-radius:10px;border:1px solid #ccc;padding:5px;margin:0 0 10px 0;}
+#main ul.item li img, #main ul.match li img {display:table-cell;vertical-align:top;}
+#main ul.item li span.meta, #main ul.match li span.meta {display:table-cell;vertical-align:top;margin:0;padding:0 0 0 5px;}
+#main ul.match li {margin:0 0 5px 0;}
+input,select {vertical-align:middle;border-width:0;-webkit-appearance:none;-moz-appearance:none;}
+fieldset {border:0 none;}
+form#searchBox {position:relative;width:100%;height:30px;background-color:#fff;border:1px solid #ddd;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;}
+#searchBox label {display:none;}
+#searchBox input {position:absolute;top:3px;left:0;margin:0 3px;padding:0;width:90%;line-height:25px;height:25px;font-size:1.4em;border:0;-webkit-appearance:none;}
+#searchBox button {position:absolute;top:0;right:0;cursor:pointer;margin:0;padding:0;width:30px;height:30px;float:left;background: url('../img/search.gif') no-repeat 50% 50%;text-indent:-999em;border:1px solid #ddd;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;}
+
+
+/* =tabbed nav 
+ul#nav{list-style-type:none;border-bottom:1px solid #ccc;margin:0 0 20px 0;padding:0 0 35px 5px;}
+ul#nav li{display:inline;margin:0;padding:0;}
+#nav a:link,#nav a:visited{margin-right:8px;background:#F2F2F2;border:1px solid #ccc;color:#666;float:left;font-size:1.7em;line-height:14px;text-decoration:none;-moz-border-radius-topleft:4px;-webkit-border-top-left-radius:4px;-moz-border-radius-topright:4px;-webkit-border-top-right-radius:4px;padding:10px;}
+#nav a:hover{color:#015;}
+#nav a:link.active,#nav a:visited.active,body.search #nav li#tab1 a,body.item #nav li#tab1 a,body.where #nav li#tab2 a,body.about #nav li#tab3 a{color:#000;background:#fff;border-bottom:1px solid #fff;} */
+
+
+/* =tabbed nav */
+#nav {zoom:1px;margin-left:0;list-style:none;border-bottom:1px solid #ddd;}
+#nav:before,#nav:after {display:table;content:"";}
+#nav:after {clear:both;}
+#nav > li {float:left;margin-bottom:-1px;margin-left:5px;font-size:1.6em;}
+#nav > li > a {display:block;margin-right:2px;line-height:14px;border:1px solid transparent;-webkit-border-radius:4px 4px 0 0;-moz-border-radius:4px 4px 0 0;border-radius:4px 4px 0 0;padding:8px 12px;}
+#nav > li > a:hover {text-decoration:none;background-color:#eee;border-color:#eee #eee #ddd;}
+#nav > .active > a,#nav > .active > a:hover,body.search #nav li#tab1 a,body.item #nav li#tab1 a,body.where #nav li#tab2 a,body.about #nav li#tab3 a {color:#555;cursor:default;background-color:#fff;border:1px solid #ddd;border-bottom-color:transparent;}
+
+@font-face{font-family:"icomoon";src:url("../fonts/icomoon.eot?#") format("eot"), url("../fonts/icomoon.woff") format("woff"), url("../fonts/icomoon.svg#icomoon") format("svg"), url("../fonts/icomoon.ttf") format("truetype");font-weight:normal;font-style:normal;}
+/*use following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before{font-family:icomoon;content:attr(data-icon);speak:none}
+/*use following CSS code if you want to have a class per icon */
+[class^=icon-]:before,[class*=" icon-"]:before{font-family:icomoon;font-style:normal;speak:none}
+.icon-picture:before{content:"\22";padding:0 5px 0 0;color:#666;}
+.icon-book:before{content:"\23"}
+.icon-paper:before{content:"\24"}
+.icon-compass:before{content:"\25"}
+.icon-location:before{content:"\26";padding:0 2px 0 0;}
+.icon-camera:before{content:"\27"}
+.icon-database:before{content:"\2a"}
+.icon-cog:before{content:"\2b"}
+.icon-target:before{content:"\2d"}
+.icon-share:before{content:"\30";padding:0 5px 0 0;color:#666;}
+.icon-share-2:before{content:"\31"}
+.icon-map:before{content:"\32";padding:0 4px 0 0;}
+.icon-browser:before{content:"\33";padding:0 3px 0 0;}
+.icon-book-2:before{content:"\34"}
+.icon-flight:before{content:"\35"}
+.icon-facebook:before{content:"\36";}
+.icon-facebook-2:before{content:"\37";padding:0 2px 0 0;}
+.icon-facebook-3:before{content:"\38"}
+.icon-twitter:before{content:"\39"}
+.icon-twitter-2:before{content:"\3a";padding:0 2px 0 0;}
+.icon-twitter-3:before{content:"\3b"}
+.icon-feed:before{content:"\3c";color:orange;padding:0 3px 0 0;}
+.icon-feed-2:before{content:"\3d"}
+.icon-feed-3:before{content:"\3e"}
+.icon-youtube:before{content:"\3f"}
+.icon-youtube-2:before{content:"\40"}
+.icon-amazon:before{content:"\28"}
+.icon-amazon-2:before{content:"\41"}
+.icon-info:before{content:"\2e"}
+.icon-info-circle:before{content:"\42";padding:0 2px 0 0;}
+.icon-help:before{content:"\43"}
+.icon-help-2:before{content:"\44"}
+.icon-warning:before{content:"\45"}
+.icon-list:before{content:"\46"}
+.icon-arrow:before{content:"\47";padding:0 3px 0 0;color:#666;}
+.icon-arrow-2:before{content:"\48"}
+.icon-arrow-3:before{content:"\49"}
+.icon-arrow-4:before{content:"\4a";padding:0 3px 0 0;color:#666;}
+.icon-home:before{content:"\4b";}
+.icon-search:before{content:"\4c";padding:0 2px 0 0;}
+.icon-comment:before{content:"\2f"}
+.icon-clock:before{content:"\4d"}
+.icon-bars:before{content:"\2c"}
+.icon-camera-2:before{content:"\4e"}
+.icon-plus:before{content:"\29"}
+.icon-minus:before{content:"\4f"}
+.icon-close:before{content:"\50"}
+.icon-plus-2:before{content:"\51"}
+.icon-minus-2:before{content:"\52"}
+.icon-creative-commons:before{content:"\53"}
+.icon-user:before{content:"\21"}
+.icon-retweet:before{content:"\54"}
+.icon-map-pin-stroke:before{content:"\55"}
+.icon-map-pin-fill:before{content:"\56"}
+.icon-map-pin-alt:before{content:"\57"}

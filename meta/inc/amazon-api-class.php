@@ -3,9 +3,9 @@ class Amazon
 {
 
 	// public key
-	var $publicKey = "AKIAJXJUDBEAQRSLZZXQ";
+	var $publicKey = 'YOUR-AMAZON-PRODUCT-ADVERTISING-PUBLIC-API-KEY-HERE';
 	// private key
-	var $privateKey = "Gck3d1JA+lUfuQ6upErRFzLFg8D1kdvnm+K3r63f";
+	var $privateKey = 'YOUR-AMAZON-PRODUCT-ADVERTISING-PRIVATE-API-KEY-HERE';
 	// affiliate tag
 	//var $affiliateTag='affiliateTag';
 

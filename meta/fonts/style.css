@@ -1,0 +1,188 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('fonts/icomoon.eot?#') format('eot'),
+		url('fonts/icomoon.woff') format('woff'),
+		url('fonts/icomoon.svg#icomoon') format('svg'),
+		url('fonts/icomoon.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+	font-family: 'icomoon';
+	content: attr(data-icon);
+	speak: none;
+}
+
+/* Use the following CSS code if you want to have a class per icon */
+[class^="icon-"]:before, [class*=" icon-"]:before {
+	font-family: 'icomoon';
+	font-style: normal;
+	speak: none;
+}
+.icon-picture:before {
+	content: "\22";
+}
+.icon-book:before {
+	content: "\23";
+}
+.icon-paper:before {
+	content: "\24";
+}
+.icon-compass:before {
+	content: "\25";
+}
+.icon-location:before {
+	content: "\26";
+}
+.icon-camera:before {
+	content: "\27";
+}
+.icon-database:before {
+	content: "\2a";
+}
+.icon-cog:before {
+	content: "\2b";
+}
+.icon-target:before {
+	content: "\2d";
+}
+.icon-share:before {
+	content: "\30";
+}
+.icon-share-2:before {
+	content: "\31";
+}
+.icon-map:before {
+	content: "\32";
+}
+.icon-browser:before {
+	content: "\33";
+}
+.icon-book-2:before {
+	content: "\34";
+}
+.icon-flight:before {
+	content: "\35";
+}
+.icon-facebook:before {
+	content: "\36";
+}
+.icon-facebook-2:before {
+	content: "\37";
+}
+.icon-facebook-3:before {
+	content: "\38";
+}
+.icon-twitter:before {
+	content: "\39";
+}
+.icon-twitter-2:before {
+	content: "\3a";
+}
+.icon-twitter-3:before {
+	content: "\3b";
+}
+.icon-feed:before {
+	content: "\3c";
+}
+.icon-feed-2:before {
+	content: "\3d";
+}
+.icon-feed-3:before {
+	content: "\3e";
+}
+.icon-youtube:before {
+	content: "\3f";
+}
+.icon-youtube-2:before {
+	content: "\40";
+}
+.icon-amazon:before {
+	content: "\28";
+}
+.icon-amazon-2:before {
+	content: "\41";
+}
+.icon-info:before {
+	content: "\2e";
+}
+.icon-info-circle:before {
+	content: "\42";
+}
+.icon-help:before {
+	content: "\43";
+}
+.icon-help-2:before {
+	content: "\44";
+}
+.icon-warning:before {
+	content: "\45";
+}
+.icon-list:before {
+	content: "\46";
+}
+.icon-arrow:before {
+	content: "\47";
+}
+.icon-arrow-2:before {
+	content: "\48";
+}
+.icon-arrow-3:before {
+	content: "\49";
+}
+.icon-arrow-4:before {
+	content: "\4a";
+}
+.icon-home:before {
+	content: "\4b";
+}
+.icon-search:before {
+	content: "\4c";
+}
+.icon-comment:before {
+	content: "\2f";
+}
+.icon-clock:before {
+	content: "\4d";
+}
+.icon-bars:before {
+	content: "\2c";
+}
+.icon-camera-2:before {
+	content: "\4e";
+}
+.icon-plus:before {
+	content: "\29";
+}
+.icon-minus:before {
+	content: "\4f";
+}
+.icon-close:before {
+	content: "\50";
+}
+.icon-plus-2:before {
+	content: "\51";
+}
+.icon-minus-2:before {
+	content: "\52";
+}
+.icon-creative-commons:before {
+	content: "\53";
+}
+.icon-user:before {
+	content: "\21";
+}
+.icon-retweet:before {
+	content: "\54";
+}
+.icon-map-pin-stroke:before {
+	content: "\55";
+}
+.icon-map-pin-fill:before {
+	content: "\56";
+}
+.icon-map-pin-alt:before {
+	content: "\57";
+}

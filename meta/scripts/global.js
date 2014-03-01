@@ -12,6 +12,7 @@ function addLoadEvent(func) {
     }
 }
 
+/*
 function getHTTPObject() {
   var xhr = false;
   if (window.XMLHttpRequest) {
@@ -29,6 +30,7 @@ function getHTTPObject() {
   }
   return xhr;
 }
+*/
 
 function displayLoading(element) {
   while (element.hasChildNodes()) {
@@ -40,6 +42,7 @@ function displayLoading(element) {
   element.appendChild(image);
 }
 
+/*
 function fadeUp(element,red,green,blue) {
   if (element.fade) {
     clearTimeout(element.fade);
@@ -62,6 +65,7 @@ function parseResponse(request) {
     if (request.status == 200 || request.status == 304) {
       var details = document.getElementById("main");
       details.innerHTML = request.responseText;
+	  eval(document.getElementById("main").innerHTML);
       fadeUp(details,255,255,153);
     }
   }
@@ -103,6 +107,7 @@ function preparePage() {
     };
   }
 }
+*/
 
 function hideChrome() {
 //generic function to hide url address bar
@@ -115,5 +120,11 @@ function hideChrome() {
 //});
 }
 
-addLoadEvent(preparePage);
+//addLoadEvent(preparePage);
 addLoadEvent(hideChrome);
+addLoadEvent(displayLoading);
+
+var submit = document.getElementById('btn');
+submit.onclick = function() {
+    displayLoading(document.getElementById("main"));
+}

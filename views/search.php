@@ -1,7 +1,7 @@
 <h2>I'm reading...</h2>
 <?php
 //set default value for Worldcat API key
-$key = isset($_GET['key']) ? trim(strip_tags(urlencode($_GET['key']))) : 'B3F6fY0fdaYyWFaU2a5a25QD28BsxH6H8wZnViTESKxZZBR7Fg71nC0V6IeXa78EKAYsGzhMAyYyEihv';
+$key = isset($_GET['key']) ? trim(strip_tags(urlencode($_GET['key']))) : 'YOUR-WORLDCAT-API-KEY-HERE';
 //set default value for query
 $q = isset($_GET['q']) ? trim(strip_tags(urlencode($_GET['q']))) : null;
 //set default value for latitude
@@ -10,7 +10,7 @@ $lat = isset($_GET['lat']) ? $_GET['lat'] : null;
 $lng = isset($_GET['lng']) ? $_GET['lng'] : null;
 //set default value for library collection to search - list available at http://www.oclc.org/contacts/libraries/
 //docs here - http://oclc.org/developer/documentation/worldcat-search-api/library-catalog-url 
-$library = isset($_GET['library']) ? trim(strip_tags($_GET['library'])) : 'MZF';
+$library = isset($_GET['library']) ? trim(strip_tags($_GET['library'])) : 'YOUR-OCLC-LIBRARY-ID-HERE';
 
 //include the Amazon Product services API class
 require_once './meta/inc/amazon-api-class.php';
@@ -22,9 +22,19 @@ if (is_null($q)): //show form and allow the user to search
 <fieldset>
 <label for="q">Search</label> 
 <input type="text" maxlength="200" name="q" id="q" tabindex="1" placeholder="keyword, isbn, title..." x-webkit-speech="" x-webkit-grammar="builtin:search" onwebkitspeechchange="startSearch()" onfocus="this.value=''; this.onfocus=null;" /> 
-<button type="submit" class="button">Search</button> 
+<button type="submit" id="btn" class="button">Search</button> 
 </fieldset> 
-</form> 
+</form>
+<p id="message" style="display:none"><img src="./meta/img/loading.gif" id="loading" /> Time to make the donuts...</p>
+<script>
+window.onload = function() {
+var submit = document.getElementById('btn');
+	submit.onclick = function() {
+		var msg = document.getElementById("message");
+		msg.style.display = 'block';
+	}
+}
+</script>
 
 <?php
 else: //if form has query, show form and process 
@@ -34,16 +44,26 @@ else: //if form has query, show form and process
 <fieldset> 
 <label for="q">Search</label> 
 <input type="text" maxlength="200" name="q" id="q" tabindex="1" placeholder="keyword, isbn, title..." x-webkit-speech="" x-webkit-grammar="builtin:search" onwebkitspeechchange="startSearch()" onfocus="this.value=''; this.onfocus=null;" /> 
-<button type="submit" class="button">Search</button> 
+<button type="submit" id="btn" class="button">Search</button> 
 </fieldset> 
-</form> 
+</form>
+<p id="message" style="display:none"><img src="./meta/img/loading.gif" id="loading" /> loading...</p>
+<script>
+window.onload = function() {
+var submit = document.getElementById('btn');
+	submit.onclick = function() {
+		var msg = document.getElementById("message");
+		msg.style.display = 'block';
+	}
+}
+</script>
 
 <?php
 $Amazon=new Amazon();
 
 $parameters=array(
 "region"=>"com",
-"AssociateTag"=>"jasonclarkinf-20",
+"AssociateTag"=>"YOUR-AMAZON-ASSOCIATE-TAG-HERE",
 "Operation"=>"ItemSearch", // we will be searching
 "SearchIndex"=>"Books", // "All" will search all categories, use "Books" to limit to books
 'ResponseGroup'=>'Images,ItemAttributes,EditorialReview,Reviews,Similarities',// we want images, item info, reviews, and related items
@@ -55,6 +75,8 @@ $request=simplexml_load_file($queryUrl) or die ("xml response not loading");
 
 if($request->Items->TotalResults > 0)
 {
+
+echo $request;
 // we have at least one response
 //set Amazon xml values as specifc variables to be printed out below
 $image = $request->Items->Item->SmallImage->URL;
@@ -95,14 +117,14 @@ echo '<ul class="match">'."\n";
 			if ($width > 30){
 				//thumbnail available
 				$thumbnail = $remoteImageUrl;
-			}else{
+			} else {
 				//set default thumbnail
 				$thumbnail = './meta/img/thumbnail-default.gif';
-			}
+			}		
                 echo '<li>'."\n";
 				echo '<img src="'.$thumbnail.'" />'."\n";
 				echo '<span class="meta"><strong>'.html_entity_decode($related->Title).'</strong>'."\n";
-                echo '<br /><a class="expand" href="./index.php?view=item&id='.$related->ASIN.'">Check Worldcat</a></span>'."\n";
+                echo '<br /><a class="expand" href="./index?view=item&id='.$related->ASIN.'">Check Worldcat</a></span>'."\n";
                 echo '</li>'."\n";
         }
 echo '</ul>'."\n";

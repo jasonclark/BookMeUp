@@ -1,0 +1,168 @@
+@font-face {
+	font-family: 'icomoon';
+	src: url('fonts/icomoon.eot');
+	src: url('fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('fonts/icomoon.woff') format('woff'),
+		url('fonts/icomoon.svg#icomoon') format('svg'),
+		url('fonts/icomoon.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+	font-family: 'icomoon';
+	content: attr(data-icon);
+	speak: none;
+}
+
+/* Use the following CSS code if you want to have a class per icon */
+[class^="icon-"]:before, [class*=" icon-"]:before {
+	font-family: 'icomoon';
+	font-style: normal;
+	speak: none;
+}
+.icon-picture:before {
+	content: "\22";
+}
+.icon-microphone:before {
+	content: "\23";
+}
+.icon-play:before {
+	content: "\25";
+}
+.icon-camera:before {
+	content: "\26";
+}
+.icon-database:before {
+	content: "\27";
+}
+.icon-cog:before {
+	content: "\28";
+}
+.icon-facebook:before {
+	content: "\2a";
+}
+.icon-facebook-2:before {
+	content: "\2b";
+}
+.icon-facebook-3:before {
+	content: "\2c";
+}
+.icon-twitter:before {
+	content: "\2d";
+}
+.icon-twitter-2:before {
+	content: "\2e";
+}
+.icon-twitter-3:before {
+	content: "\2f";
+}
+.icon-feed:before {
+	content: "\30";
+}
+.icon-feed-2:before {
+	content: "\31";
+}
+.icon-feed-3:before {
+	content: "\32";
+}
+.icon-youtube:before {
+	content: "\33";
+}
+.icon-youtube-2:before {
+	content: "\34";
+}
+.icon-amazon:before {
+	content: "\35";
+}
+.icon-amazon-2:before {
+	content: "\36";
+}
+.icon-map:before {
+	content: "\37";
+}
+.icon-share:before {
+	content: "\38";
+}
+.icon-star:before {
+	content: "\39";
+}
+.icon-star-2:before {
+	content: "\3a";
+}
+.icon-comment:before {
+	content: "\3b";
+}
+.icon-camera-2:before {
+	content: "\3c";
+}
+.icon-info-circle:before {
+	content: "\3d";
+}
+.icon-help:before {
+	content: "\40";
+}
+.icon-warning:before {
+	content: "\41";
+}
+.icon-locked:before {
+	content: "\3e";
+}
+.icon-list:before {
+	content: "\42";
+}
+.icon-arrow:before {
+	content: "\44";
+}
+.icon-arrow-2:before {
+	content: "\45";
+}
+.icon-arrow-3:before {
+	content: "\46";
+}
+.icon-arrow-4:before {
+	content: "\47";
+}
+.icon-book:before {
+	content: "\49";
+}
+.icon-home:before {
+	content: "\48";
+}
+.icon-location:before {
+	content: "\3f";
+}
+.icon-center:before {
+	content: "\43";
+}
+.icon-email:before {
+	content: "\21";
+}
+.icon-flight:before {
+	content: "\24";
+}
+.icon-minus:before {
+	content: "\29";
+}
+.icon-plus:before {
+	content: "\4a";
+}
+.icon-close:before {
+	content: "\4b";
+}
+.icon-minus-2:before {
+	content: "\4c";
+}
+.icon-plus-2:before {
+	content: "\4d";
+}
+.icon-creative-commons:before {
+	content: "\4e";
+}
+.icon-search:before {
+	content: "\4f";
+}
+.icon-light-bulb:before {
+	content: "\50";
+}
