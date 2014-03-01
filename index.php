@@ -21,7 +21,6 @@ $customCSS = 'none';
 <title><?php echo $pageTitle.' '.$subTitle; ?></title>
 <link rel="apple-touch-icon" href="./meta/img/msu-mobile.png" />
 <link href="./meta/styles/m-app.css" media="screen" rel="stylesheet" type="text/css" />
-<!--<link href="./meta/styles/m-app.css" media="screen" rel="stylesheet" type="text/css" />-->
 <?php 
 if ($customCSS != 'none') {
 echo '<link href="'.dirname($_SERVER['PHP_SELF']).'./meta/styles/'.$customCSS.'" media="screen" rel="stylesheet" type="text/css" />'."\n";
