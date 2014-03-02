@@ -1,6 +1,6 @@
-== Mobile Web Template with PHP and Javascript ==
+== BookMeUp Template with PHP and Javascript ==
 
-Sample code and files for creating a mobile version of a web site.  
+Sample code and files for creating a BookMeUp recommendation tool as a web site.  
 Utilizes HTML, CSS, PHP, and Javascript to work, but one could substitute any
 server-side language for PHP.
 
@@ -15,7 +15,7 @@ switch.php - the main logic, uses requests from index.php to load different HTML
 
 --------------
 
-NOTE: This mobile web template is a foundation that has been tested on multiple mobile devices.
+NOTE: This web template is a foundation that has been tested on multiple mobile devices.
 It provides a jumping off point for mobile design, but you should feel free to customize to your 
 specific needs by editing the CSS and other files that make up the UI. 
 
@@ -37,9 +37,10 @@ For some best practices and the basics of how this application works, visit:
 http://diginit.wordpress.com/2009/11/13/mobile-web-design-working-code-tips-best-practices/
 
 To see this application running live, visit:
-http://www.lib.montana.edu/~jason/files/m/
+http://www.lib.montana.edu/beta/bookme/
 
 
 == UPDATES ==
 
-11/2009 - Beta release.
+06/2012 - Alpha release.
+11/2013 - Beta release.
