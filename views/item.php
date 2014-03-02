@@ -1,11 +1,10 @@
 <?php
 //set default value for query
-$id = isset($_GET['id']) ? $_GET['id'] : null;
+$id = isset($_GET['id']) ? htmlentities(strip_tags($_GET['id'])) : null;
 
 $worldcatKey = 'YOUR-WORLDCAT-API-KEY-HERE';
 
-$base = 'http://www.worldcat.org/webservices/catalog/content/isbn/'.$id.'?&recordSchema=info%3Asrw%2Fschema%2F1%2Fdc';
-$base .= '&wskey='. $worldcatKey;
+$base = 'http://www.worldcat.org/webservices/catalog/content/isbn/'.$id.'?recordSchema=info%3Asrw%2Fschema%2F1%2Fdc&wskey='.$worldcatKey;
 
 //build request and send to Worldcat Search API
 $request = simplexml_load_file($base);
@@ -20,11 +19,12 @@ if (strlen($title) > 0 ): //item available
 	$title = $dc->title;
 	$author = $dc->creator;
 	$date = $dc->date;
+	$publisher = $dc->publisher;
 	$format = $dc->format;
+	$lccnNumber = trim($dc->identifier);
 
 	$oclc = $request->children('http://purl.org/oclc/terms/');
-	$lccnNumber = trim($oclc->recordIdentifier[0]);
-	$oclcNumber = trim($oclc->recordIdentifier[1]);
+	$oclcNumber = trim($oclc->recordIdentifier);
 
 	$remoteImageUrl = 'http://covers.openlibrary.org/b/isbn/'.$id.'-S.jpg';
 	list($width, $height) = getimagesize($remoteImageUrl); 
@@ -45,6 +45,7 @@ if (strlen($title) > 0 ): //item available
 <span class="meta"><strong><?php echo $title; ?></strong>
 by <?php echo $author; ?> (<?php echo $date; ?>)<br />
 <?php echo $format; ?><br />
+<?php echo $publisher; ?><br />
 <!--<a class="expand" href="http://www.worldcat.org/search?q=bn%3A<?php //echo $id; ?>&qt=advanced">Worldcat</a>-->
 <a class="expand" href="http://www.worldcat.org/oclc/<?php echo $oclcNumber; ?>">Worldcat</a>
 <a class="expand" href="http://lccn.loc.gov/<?php echo $lccnNumber; ?>">Library of Congress</a>
