@@ -3,7 +3,7 @@
 $pageTitle = 'BookMeUp';
 $subTitle = '@ The Library';
 //set default tab and page view
-$view = isset($_GET['view']) ? $_GET['view'] : 'search';
+$view = isset($_GET['view']) ? htmlentities($_GET['view']) : 'search';
 //set filename for additional stylesheet - default is "none"
 $customCSS = 'none';
 //create an array with filepaths for multiple page scripts - default is meta/scripts/global.js
