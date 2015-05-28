@@ -17,11 +17,12 @@ $customCSS = 'none';
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta http-equiv="Cache-Control" content="max-age=200" />
 <meta name="description" content="<?php echo $pageTitle.' '.$subTitle; ?>" />
-<meta id="viewport" name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
 <title><?php echo $pageTitle.' '.$subTitle; ?></title>
 <link rel="apple-touch-icon" href="./meta/img/msu-mobile.png" />
 <link href="./meta/styles/m-app.css" media="screen" rel="stylesheet" type="text/css" />
-<?php 
+<!--<link href="./meta/styles/m-app.css" media="screen" rel="stylesheet" type="text/css" />-->
+<?php
 if ($customCSS != 'none') {
 echo '<link href="'.dirname($_SERVER['PHP_SELF']).'./meta/styles/'.$customCSS.'" media="screen" rel="stylesheet" type="text/css" />'."\n";
 }
@@ -50,7 +51,7 @@ echo '<script type="text/javascript" src="'.$customScript[$i].'"></script>'."\n"
     <p class="info">
         <a accesskey="4" class="site icon-browser" title="full site" href="/index.php">MSU Library</a>
         <a accesskey="5" class="worldcat" title="powered by worldcat.org" href="http://www.worldcat.org/">Worldcat</a>
-	</p> 
+	</p>
 	</div><!-- end ft div -->
 </div><!-- end doc div -->
 </body>
