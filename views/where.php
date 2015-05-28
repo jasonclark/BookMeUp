@@ -1,7 +1,6 @@
 	<h2 class="result">Local topics for BookMeUp</h2>
 	<p id="message" style="display:none"><img src="./meta/img/loading.gif" id="loading" /> Waiting for Godot...</p>
 	<p class="terms"> </p>
-	<!--<script async src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>-->
   <script async src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
 <script type="text/javascript">
