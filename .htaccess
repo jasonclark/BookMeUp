@@ -6,6 +6,15 @@
 #RewriteCond %{REQUEST_FILENAME} !-d
 #RewriteRule ^(.*)$ $1.php [L,QSA]
 
+#allow cross-origin requests.
+# https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS
+# http://enable-cors.org/
+# http://www.w3.org/TR/cors/
+
+<IfModule mod_headers.c>
+  Header set Access-Control-Allow-Origin "*"
+</IfModule>
+
 #make sure mod_rewrite is enabled for all rules below
 Options +FollowSymLinks
 RewriteEngine On
