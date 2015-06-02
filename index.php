@@ -16,12 +16,18 @@ $customCSS = 'none';
 <!-- force latest IE rendering engine & Chrome Frame -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta http-equiv="Cache-Control" content="max-age=200" />
-<meta name="description" content="<?php echo $pageTitle.' '.$subTitle; ?>" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title><?php echo $pageTitle.' '.$subTitle; ?></title>
+<meta name="description" content="<?php echo $pageTitle.' '.$subTitle; ?>" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="http://www.jasonclark.info" />
+<meta name="twitter:creator" content="@jaclark" />
+<meta property="og:url" content="http://www.lib.montana.edu/beta/bookme/" />
+<meta property="og:title" content="BookMeUp @ The Library" />
+<meta property="og:description" content="BookMeUp uses the Amazon Product Advertising API to suggest related books to read based on a user's location and/or search query."/>
+<meta property="og:image" content="http://www.lib.montana.edu/beta/bookme/meta/img/bookmeup-share-default.png" />
 <link rel="apple-touch-icon" href="./meta/img/msu-mobile.png" />
 <link href="./meta/styles/m-app.css" media="screen" rel="stylesheet" type="text/css" />
-<!--<link href="./meta/styles/m-app.css" media="screen" rel="stylesheet" type="text/css" />-->
 <?php
 if ($customCSS != 'none') {
 echo '<link href="'.dirname($_SERVER['PHP_SELF']).'./meta/styles/'.$customCSS.'" media="screen" rel="stylesheet" type="text/css" />'."\n";
