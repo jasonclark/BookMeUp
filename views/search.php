@@ -1,7 +1,7 @@
 <h2>I'm reading...</h2>
 <?php
 //set default value for Worldcat API key
-$key = isset($_GET['key']) ? trim(strip_tags(urlencode($_GET['key']))) : 'B3F6fY0fdaYyWFaU2a5a25QD28BsxH6H8wZnViTESKxZZBR7Fg71nC0V6IeXa78EKAYsGzhMAyYyEihv';
+$key = isset($_GET['key']) ? trim(strip_tags(urlencode($_GET['key']))) : 'YOUR-WORLDCAT-API-KEY-HERE';
 //set default value for query
 $q = isset($_GET['q']) ? trim(strip_tags(urlencode($_GET['q']))) : null;
 //set default value for latitude
@@ -10,7 +10,7 @@ $lat = isset($_GET['lat']) ? $_GET['lat'] : null;
 $lng = isset($_GET['lng']) ? $_GET['lng'] : null;
 //set default value for library collection to search - list available at http://www.oclc.org/contacts/libraries/
 //docs here - http://oclc.org/developer/documentation/worldcat-search-api/library-catalog-url
-$library = isset($_GET['library']) ? trim(strip_tags($_GET['library'])) : 'MZF';
+$library = isset($_GET['library']) ? trim(strip_tags($_GET['library'])) : 'YOUR-OCLC-LIBRARY-ID-HERE';
 
 //include the Amazon Product services API class
 require_once './meta/inc/amazon-api-class.php';
