@@ -1,4 +1,7 @@
 <?php
+// Applying the Amazon Product Adverstising API, version 2013-08-01
+// http://docs.aws.amazon.com/AWSECommerceService/latest/DG/CHAP_ApiReference.html
+
 class Amazon
 {
 
@@ -26,7 +29,8 @@ class Amazon
 		$param['Service'] = "AWSECommerceService";
 	    $param['AWSAccessKeyId'] = $this->publicKey;
 	    $param['Timestamp'] = gmdate("Y-m-d\TH:i:s\Z");
-	    $param['Version'] = '2011-08-01';
+	    $param['Version'] = '2013-08-01';
+	    //$param['Version'] = '2011-08-01';
 		ksort($param);
 	    foreach ($param as $key=>$value)
 	    {
