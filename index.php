@@ -14,8 +14,8 @@ $customCSS = 'none';
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!-- force latest IE rendering engine & Chrome Frame -->
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta http-equiv="Cache-Control" content="max-age=200" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="Cache-control" content="max-age=2592000, public" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title><?php echo $pageTitle.' '.$subTitle; ?></title>
 <meta name="description" content="<?php echo $pageTitle.' '.$subTitle; ?>" />
