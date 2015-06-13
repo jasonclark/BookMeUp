@@ -27,6 +27,7 @@ a.worldcat {float:right;width:auto;margin:0;padding:5px 5px 5px 16px;background:
 a.site {float:left;width:auto;margin:0;padding:5px 0;}
 a.about {float:right;width:auto;margin:0;padding:5px 0;}
 a.feed {float:right;width:auto;margin:0 10px 0 0;padding:5px 0;}
+.hidden {border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;}
 #main h2 {padding:0 0 10px 0;font-size:1.4em;}
 #main h3 {padding:10px 0;}
 #main h2.result {padding:10px 0;font-size:1.4em;}
@@ -42,7 +43,6 @@ a.feed {float:right;width:auto;margin:0 10px 0 0;padding:5px 0;}
 input,select {vertical-align:middle;border-width:0;-webkit-appearance:none;-moz-appearance:none;}
 fieldset {border:0 none;}
 form#searchBox {position:relative;width:100%;height:30px;background-color:#fff;border:1px solid #ddd;border-radius:3px;}
-#searchBox label {display:none;}
 #searchBox input {position:absolute;top:3px;left:0;margin:0 3px;padding:0;width:90%;line-height:25px;height:25px;font-size:1.4em;border:0;-webkit-appearance:none;}
 #searchBox button {position:absolute;top:0;right:0;cursor:pointer;margin:0;padding:0;width:30px;height:30px;float:left;background: url('../img/search.gif') no-repeat 50% 50%;text-indent:-999em;border:1px solid #ddd;border-radius:3px;}
 
