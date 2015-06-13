@@ -20,7 +20,7 @@ if (is_null($q)): //show form and allow the user to search
 
 <form id="searchBox" method="get" action="./index?view=search">
 <fieldset>
-<label for="q">Search</label>
+<label class="hidden" for="q">Search</label>
 <input type="text" maxlength="200" name="q" id="q" tabindex="1" placeholder="keyword, isbn, title..." autofocus />
 <button type="submit" id="btn" class="button">Search</button>
 </fieldset>
@@ -42,7 +42,7 @@ else: //if form has query, show form and process
 
 <form id="searchBox" method="get" action="./index?view=search">
 <fieldset>
-<label for="q">Search</label>
+<label class="hidden" for="q">Search</label>
 <input type="text" maxlength="200" name="q" id="q" tabindex="1" placeholder="keyword, isbn, title..." autofocus />
 <button type="submit" id="btn" class="button">Search</button>
 </fieldset>
