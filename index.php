@@ -27,6 +27,7 @@ $customCSS = 'none';
 <meta property="og:description" content="BookMeUp uses the Amazon Product Advertising API to suggest related books to read based on a user's location and/or search query."/>
 <meta property="og:image" content="http://www.lib.montana.edu/beta/bookme/meta/img/bookmeup-share-default.png" />
 <link rel="apple-touch-icon" href="./meta/img/msu-mobile.png" />
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:700italic,400,700" rel="stylesheet" type="text/css" />
 <link href="./meta/styles/m-app.css" media="screen" rel="stylesheet" type="text/css" />
 <?php
 if ($customCSS != 'none') {
