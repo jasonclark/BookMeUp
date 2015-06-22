@@ -1,7 +1,7 @@
 /*Styles for mobile library site | Author: Jason A. Clark | Version: mobile 1.0, November 2009*/
 /* =global settings */
-html {overflow-y:scroll;border-bottom:1em solid #063053;}
-body {font:62.5% normal Helvetica, sans-serif;margin:0;padding:0;overflow-x:hidden;color:#444;}
+html {font-family:"Open Sans",sans-serif;overflow-y:scroll;border-bottom:2.5em solid #063053;}
+body {font-size:62.5%;font-weight:normal;margin:0;padding:0;overflow-x:hidden;color:#444;}
 *, * focus {outline:none;margin:0;padding:0;}
 a:link {text-decoration:none; color:#444;}
 a:visited {text-decoration:none; color:#444;}
@@ -9,10 +9,10 @@ a:visited {text-decoration:none; color:#444;}
 #doc, #hd {width:100%;margin:0;padding:0;}
 #main {padding:15px 10px 0 10px;width:auto;min-height:250px;/*height:100vh;*/}
 #ft {margin:25px 0 0 0;width:auto;border-top:1px solid #ccc;}
-h1 {font:1.75em normal Helvetica, sans-serif;color:#fff;margin:0 0 5px 0;padding:10px 0 10px 27px;background:#063053 url("../img/book.png") 5px 50% no-repeat;}
+h1 {font-size:1.75em;font-weight:normal;color:#fff;margin:0 0 5px 0;padding:10px 0 10px 27px;background:#063053 url("../img/book.png") 5px 50% no-repeat;}
 @media only screen and (max-device-width: 320px) { h1 {overflow:hidden;white-space:nowrap;text-overflow:ellipsis;} }
 h1 span {color:#fff;}
-h1 small{font:.3em normal Helvetica, sans-serif;text-transform:uppercase;letter-spacing:1em;color:#fff;}
+h1 small {font-size:.3em;text-transform:uppercase;letter-spacing:1em;color:#fff;}
 p.info {padding:0 10px;font-size:1.3em;}
 p.terms a {display:inline-block;margin:5px 5px 5px 0;padding:5px;}
 a.bck {font-size:1.1em;background:url("../img/bck-arrow.gif") no-repeat 0 .08em;margin:0;padding:0 0 0 16px;border:none;}
