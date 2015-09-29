@@ -17,17 +17,17 @@
 		//set latitude and longitude values
 		var lat = parseFloat(position.coords.latitude);
 		var lon = parseFloat(position.coords.longitude);
-		var url = "http://experimental.worldcat.org/mapfast/services?geo=" + lat + "," + lon + ";crs=wgs84&radius=100000&mq=&sortby=distance&max-results=30&callback=?";
+		var url = "https://experimental.worldcat.org/mapfast/services?geo=" + lat + "," + lon + ";crs=wgs84&radius=100000&mq=&sortby=distance&max-results=30&callback=?";
 		$.getJSON(url, showSubjects);
 
 		/*$.ajax({
-      type: 'GET',
-      url: url,
-      contentType: 'application/json',
-      dataType: 'jsonp',
-      crossDomain: true,
-      xhrFields: { withCredentials: true }
-    }).done(showSubjects);*/
+      		type: 'GET',
+      		url: url,
+      		contentType: 'application/json',
+      		dataType: 'jsonp',
+      		crossDomain: true,
+      		xhrFields: { withCredentials: true }
+    		}).done(showSubjects);*/
 
 	}
 
