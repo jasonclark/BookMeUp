@@ -17,11 +17,14 @@
                 //set latitude and longitude values
                 var lat = parseFloat(position.coords.latitude);
                 var lon = parseFloat(position.coords.longitude);
-                var script = document.createElement('script');
-                script.src = "https://experimental.worldcat.org/mapfast/services?geo=" + lat + "," + lon + ";crs=wgs84&radius=100000&mq=&sortby=distance&max-results=30&callback=showSubjects";
-                document.querySelector('.terms').appendChild(script);
-                //document.getElementsByTagName('body')[0].appendChild(script);
-        }
+                var jsonp = document.createElement('script');
+                jsonp.type = 'text/javascript';
+                jsonp.async = true;
+                jsonp.src = "https://experimental.worldcat.org/mapfast/services?geo=" + lat + "," + lon + ";crs=wgs84&radius=100000&mq=&sortby=distance&max-results=30&callback=showSubjects";
+                //document.querySelector('.terms').appendChild(script);
+                var script = document.getElementsByTagName('script')[0];
+                script.parentNode.insertBefore(jsonp, script);        
+	}
 
         function showSubjects(data) {
                 //hide loading message
