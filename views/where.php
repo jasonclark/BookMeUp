@@ -33,7 +33,10 @@
                 var markup = '<span>';
                 //var url = "http://www.worldcat.org/search?q=su:" + term + "&qt=advanced";
                 var url = "./index?view=search&q=";
-		for (i = data.Placemark.length; i -= 1) {
+                var i = -1;
+                var length = data.Placemark.length;
+                while (++i < length) {          
+                //for (var i = 0; i < length; i++) {
                         var cleanTerm = data.Placemark[i].name.replace(/ -- /g, " ");
                         markup += '<a title="' + data.Placemark[i].name + '" href="' + url + cleanTerm + '">' + data.Placemark[i].name + '</a>';
                 }       
