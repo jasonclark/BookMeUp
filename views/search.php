@@ -12,9 +12,6 @@ $q = isset($_GET['q']) ? trim(strip_tags(urlencode($_GET['q']))) : null;
 //docs here - http://oclc.org/developer/documentation/worldcat-search-api/library-catalog-url
 $library = isset($_GET['library']) ? trim(strip_tags($_GET['library'])) : 'MZF';
 
-//include the Amazon Product services API class
-//require_once './meta/inc/amazon-api-class.php';
-
 if (is_null($q)): //show form and allow the user to search
 ?>
 
@@ -61,33 +58,29 @@ var submit = document.getElementById('btn');
 <?php
 // your AWS Access Key ID, as taken from the AWS Your Account page
 $aws_access_key_id = 'YOUR-AMAZON-PRODUCT-ADVERTISING-PUBLIC-API-KEY-HERE';
-
 // your AWS Secret Key corresponding to the above ID, as taken from the AWS Your Account page
-$aws_secret_key = 'YOUR-AMAZON-PRODUCT-ADVERTISING-PRIVATE-API-KEY-HERE';
-
+$aws_secret_key = 'YOUR-AMAZON-PRODUCT-ADVERTISING-PUBLIC-API-KEY-HERE';
 // your Amazon Associate tag, as taken from the Amazon Affiliates page
-$aws_associate_tag = 'YOUR-AMAZON-AFFILIATES-TAG-HERE';
-
+$aws_associate_tag = 'YOUR-AMAZON-ASSOCIATES-TAG-HERE';
 // the region you are interested in
 $endpoint = 'webservices.amazon.com';
-
 $uri = '/onca/xml';
 
 $params = array(
-    "Service" => "AWSECommerceService",
-    "Operation" => "ItemSearch",
-    "AWSAccessKeyId" => "$aws_access_key_id",
-    "AssociateTag" => "$aws_associate_tag",
-    "SearchIndex" => "Books",
-    "Keywords" => "$q",
-    "ResponseGroup" => "EditorialReview,Images,ItemAttributes,RelatedItems,Reviews,Similarities",// we want images, item info, reviews, and related items
-    "RelationshipType" => "AuthorityTitle",
-    "Sort" => "relevancerank"
+	"Service" => "AWSECommerceService",
+	"Operation" => "ItemSearch",
+	"AWSAccessKeyId" => "$aws_access_key_id",
+	"AssociateTag" => "$aws_associate_tag",
+	"SearchIndex" => "Books",
+	"Keywords" => "$q",
+	"ResponseGroup" => "EditorialReview,Images,ItemAttributes,RelatedItems,Reviews,Similarities",// we want images, item info, reviews, and related items
+	"RelationshipType" => "AuthorityTitle",
+	"Sort" => "relevancerank"
 );
 
 // set current timestamp if not set
 if (!isset($params["Timestamp"])) {
-    $params["Timestamp"] = gmdate('Y-m-d\TH:i:s\Z');
+	$params["Timestamp"] = gmdate('Y-m-d\TH:i:s\Z');
 }
 
 // sort the parameters by key
@@ -96,7 +89,7 @@ ksort($params);
 $pairs = array();
 
 foreach ($params as $key => $value) {
-    array_push($pairs, rawurlencode($key)."=".rawurlencode($value));
+	array_push($pairs, rawurlencode($key)."=".rawurlencode($value));
 }
 
 // generate the canonical query
@@ -110,7 +103,6 @@ $signature = base64_encode(hash_hmac("sha256", $string_to_sign, $aws_secret_key,
 
 // generate the signed URL
 $request_url = 'http://'.$endpoint.$uri.'?'.$canonical_query_string.'&Signature='.rawurlencode($signature);
-
 //echo "Signed URL: \"".$request_url."\"";
 
 $request=simplexml_load_file($request_url) or die ('API response not loading');
@@ -139,34 +131,37 @@ $CustomerReviews = $request->Items->Item->CustomerReviews->IFrameURL;
 //print out Amazon xml values as html
 echo '<h3>Hmmm... If you are reading...</h3>'."\n";
 echo '<ul class="item" >'."\n";
-echo '<li>'."\n";
-echo '<img src="'.$image.'" />'."\n";
-echo '<span class="meta"><strong>'.$title.'</strong>'."\n";
-echo 'by '.$creator.'<br />'.$asin .' (isbn/asin)<br /><a class="expand" href="'.$uri.'">Get full details</a></span>'."\n";
-//echo '<p><a class="expand" href="'.html_entity_decode($CustomerReviews).'">Customer Reviews</a></p>'."\n";
-//echo '<p><strong>Editorial review:</strong> '.html_entity_decode($editorialReview).'</p>'."\n";
-echo '</li>'."\n";
+	echo '<li>'."\n";
+		echo '<img src="'.$image.'" />'."\n";
+		echo '<span class="meta"><strong>'.$title.'</strong>'."\n";
+		echo 'by '.$creator.'<br />'.$asin .' (isbn/asin)<br /><a class="expand" href="'.$uri.'">Get full details</a></span>'."\n";
+		//echo '<p><a class="expand" href="'.html_entity_decode($CustomerReviews).'">Customer Reviews</a></p>'."\n";
+		//echo '<p><strong>Editorial review:</strong> '.html_entity_decode($editorialReview).'</p>'."\n";
+	echo '</li>'."\n";
 echo '</ul>'."\n";
-
 echo '<h3>You should check out...</h3>'."\n";
 echo '<ul class="match">'."\n";
+if ($request->Items->Item->SimilarProducts->SimilarProduct == null) {
+	echo '<li>We couldn\'t find related books. Try a more specific query.</li>'."\n";
+} else {
         foreach ($request->Items->Item->SimilarProducts->SimilarProduct as $related) {
-			$remoteImageUrl = 'http://covers.openlibrary.org/b/isbn/'.$related->ASIN.'-S.jpg';
-			list($width, $height) = getimagesize($remoteImageUrl);
-			//echo $width;
-			if ($width > 30){
-				//thumbnail available
-				$thumbnail = $remoteImageUrl;
-			} else {
-				//set default thumbnail
-				$thumbnail = './meta/img/thumbnail-default.gif';
-			}
-                echo '<li>'."\n";
-				echo '<img src="'.$thumbnail.'" />'."\n";
-				echo '<span class="meta"><strong>'.html_entity_decode($related->Title).'</strong>'."\n";
-                echo '<br /><a class="expand" href="./index?view=item&id='.$related->ASIN.'">Check Worldcat</a></span>'."\n";
-                echo '</li>'."\n";
-        }
+		$remoteImageUrl = 'http://covers.openlibrary.org/b/isbn/'.$related->ASIN.'-S.jpg';
+		list($width, $height) = getimagesize($remoteImageUrl);
+		//echo $width;
+		if ($width > 30){
+			//thumbnail available
+			$thumbnail = $remoteImageUrl;
+		} else {
+			//set default thumbnail
+			$thumbnail = './meta/img/thumbnail-default.gif';
+		}
+	echo '<li>'."\n";
+		echo '<img src="'.$thumbnail.'" />'."\n";
+		echo '<span class="meta"><strong>'.html_entity_decode($related->Title).'</strong>'."\n";
+		echo '<br /><a class="expand" href="./index?view=item&id='.$related->ASIN.'">Check Worldcat</a></span>'."\n";
+	echo '</li>'."\n";
+	}
+}
 echo '</ul>'."\n";
 echo '<p><a class="bck" href="./index.php?view=search">new search</a></p>'."\n";
 //print out Amazon xml array for teaching purposes, next 3 lines should be removed in production environment
