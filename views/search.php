@@ -1,7 +1,7 @@
 <h2>I'm reading...</h2>
 <?php
 //set default value for Worldcat API key
-$key = isset($_GET['key']) ? trim(strip_tags(urlencode($_GET['key']))) : 'B3F6fY0fdaYyWFaU2a5a25QD28BsxH6H8wZnViTESKxZZBR7Fg71nC0V6IeXa78EKAYsGzhMAyYyEihv';
+$key = isset($_GET['key']) ? trim(strip_tags(urlencode($_GET['key']))) : 'YOUR-WORLDCAT-API-KEY-HERE';
 //set default value for query
 $q = isset($_GET['q']) ? trim(strip_tags(urlencode($_GET['q']))) : null;
 //set default value for latitude
@@ -13,7 +13,7 @@ $q = isset($_GET['q']) ? trim(strip_tags(urlencode($_GET['q']))) : null;
 $library = isset($_GET['library']) ? trim(strip_tags($_GET['library'])) : 'MZF';
 
 //include the Amazon Product services API class
-require_once './meta/inc/amazon-api-class.php';
+//require_once './meta/inc/amazon-api-class.php';
 
 if (is_null($q)): //show form and allow the user to search
 ?>
@@ -59,21 +59,61 @@ var submit = document.getElementById('btn');
 </script>
 
 <?php
-$Amazon=new Amazon();
+// your AWS Access Key ID, as taken from the AWS Your Account page
+$aws_access_key_id = 'YOUR-AMAZON-PRODUCT-ADVERTISING-PUBLIC-API-KEY-HERE';
 
-$parameters=array(
-"region" =>"com",
-"AssociateTag"=>"jasonclarkinf-20",
-"Operation"=>"ItemSearch", // we will be searching
-"SearchIndex"=>"Books", // "All" will search all categories, use "Books" to limit to books
-//"RelationshipType"=>"AuthorityTitle", // specifies the means by which items are related to the one specified in the ItemLookup request
-//"ResponseGroup"=>"Images,ItemAttributes,EditorialReview,Reviews,RelatedItems,Similarities",// we want images, item info, reviews, and related items
-"ResponseGroup"=>"Images,ItemAttributes,EditorialReview,Reviews,Similarities",// we want images, item info, reviews, and related items
-"Keywords"=>"$q"); // this is what we are looking for, you could use the book's title instead
+// your AWS Secret Key corresponding to the above ID, as taken from the AWS Your Account page
+$aws_secret_key = 'YOUR-AMAZON-PRODUCT-ADVERTISING-PRIVATE-API-KEY-HERE';
 
-$queryUrl=$Amazon->getSignedUrl($parameters);
+// your Amazon Associate tag, as taken from the Amazon Affiliates page
+$aws_associate_tag = 'YOUR-AMAZON-AFFILIATES-TAG-HERE';
 
-$request=simplexml_load_file($queryUrl) or die ('API response not loading');
+// the region you are interested in
+$endpoint = 'webservices.amazon.com';
+
+$uri = '/onca/xml';
+
+$params = array(
+    "Service" => "AWSECommerceService",
+    "Operation" => "ItemSearch",
+    "AWSAccessKeyId" => "$aws_access_key_id",
+    "AssociateTag" => "$aws_associate_tag",
+    "SearchIndex" => "Books",
+    "Keywords" => "$q",
+    "ResponseGroup" => "EditorialReview,Images,ItemAttributes,RelatedItems,Reviews,Similarities",// we want images, item info, reviews, and related items
+    "RelationshipType" => "AuthorityTitle",
+    "Sort" => "relevancerank"
+);
+
+// set current timestamp if not set
+if (!isset($params["Timestamp"])) {
+    $params["Timestamp"] = gmdate('Y-m-d\TH:i:s\Z');
+}
+
+// sort the parameters by key
+ksort($params);
+
+$pairs = array();
+
+foreach ($params as $key => $value) {
+    array_push($pairs, rawurlencode($key)."=".rawurlencode($value));
+}
+
+// generate the canonical query
+$canonical_query_string = join("&", $pairs);
+
+// generate the string to be signed
+$string_to_sign = "GET\n".$endpoint."\n".$uri."\n".$canonical_query_string;
+
+// generate the signature required by the Product Advertising API
+$signature = base64_encode(hash_hmac("sha256", $string_to_sign, $aws_secret_key, true));
+
+// generate the signed URL
+$request_url = 'http://'.$endpoint.$uri.'?'.$canonical_query_string.'&Signature='.rawurlencode($signature);
+
+//echo "Signed URL: \"".$request_url."\"";
+
+$request=simplexml_load_file($request_url) or die ('API response not loading');
 
 if($request->Items->TotalResults > 0) {
 
