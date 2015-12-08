@@ -59,7 +59,7 @@ var submit = document.getElementById('btn');
 // your AWS Access Key ID, as taken from the AWS Your Account page
 $aws_access_key_id = 'YOUR-AMAZON-PRODUCT-ADVERTISING-PUBLIC-API-KEY-HERE';
 // your AWS Secret Key corresponding to the above ID, as taken from the AWS Your Account page
-$aws_secret_key = 'YOUR-AMAZON-PRODUCT-ADVERTISING-PUBLIC-API-KEY-HERE';
+$aws_secret_key = 'YOUR-AMAZON-PRODUCT-ADVERTISING-PRIVATE-API-KEY-HERE';
 // your Amazon Associate tag, as taken from the Amazon Affiliates page
 $aws_associate_tag = 'YOUR-AMAZON-ASSOCIATES-TAG-HERE';
 // the region you are interested in
@@ -123,6 +123,15 @@ if (strlen($author) > 2) {
 } else {
         $creator = '* Creator Not Available';
 }
+$brand = $request->Items->Item->ItemAttributes->Publisher;
+//simple logic check for publisher and label values
+if (strlen($brand) > 2) {
+        $publisher = $brand;
+} elseif (empty($brand)) {
+        $publisher = $request->Items->Item->ItemAttributes->Label;
+} else {
+        $publisher = '* Publisher Not Available';
+}
 $asin = $request->Items->Item->ASIN;
 $uri = $request->Items->Item->DetailPageURL;
 $editorialReview = $request->Items->Item->EditorialReviews->EditorialReview->Content;
@@ -134,7 +143,7 @@ echo '<ul class="item" >'."\n";
 	echo '<li>'."\n";
 		echo '<img src="'.$image.'" />'."\n";
 		echo '<span class="meta"><strong>'.$title.'</strong>'."\n";
-		echo 'by '.$creator.'<br />'.$asin .' (isbn/asin)<br /><a class="expand" href="'.$uri.'">Get full details</a></span>'."\n";
+		echo 'by '.$creator.'<br />'.$asin .' (isbn/asin)<br />'.$publisher.' <br /><a class="expand" href="'.$uri.'">Get full details</a></span>'."\n";
 		//echo '<p><a class="expand" href="'.html_entity_decode($CustomerReviews).'">Customer Reviews</a></p>'."\n";
 		//echo '<p><strong>Editorial review:</strong> '.html_entity_decode($editorialReview).'</p>'."\n";
 	echo '</li>'."\n";
