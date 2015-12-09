@@ -114,20 +114,16 @@ if($request->Items->TotalResults > 0) {
 $image = $request->Items->Item->SmallImage->URL;
 if (empty($image)) { $image = './meta/img/thumbnail-default.gif'; }
 $title = $request->Items->Item->ItemAttributes->Title;
-$author = $request->Items->Item->ItemAttributes->Author;
+$creator = $request->Items->Item->ItemAttributes->Author;
 //simple logic check for author and director values
-if (strlen($author) > 2) {
-        $creator = $author;
-} elseif (empty($author)) {
+if (empty($creator)) {
         $creator = $request->Items->Item->ItemAttributes->Director;
 } else {
         $creator = '* Creator Not Available';
 }
-$brand = $request->Items->Item->ItemAttributes->Publisher;
+$publisher = $request->Items->Item->ItemAttributes->Publisher;
 //simple logic check for publisher and label values
-if (strlen($brand) > 2) {
-        $publisher = $brand;
-} elseif (empty($brand)) {
+if (empty($publisher)) {
         $publisher = $request->Items->Item->ItemAttributes->Label;
 } else {
         $publisher = '* Publisher Not Available';
