@@ -114,20 +114,34 @@ if($request->Items->TotalResults > 0) {
 $image = $request->Items->Item->SmallImage->URL;
 if (empty($image)) { $image = './meta/img/thumbnail-default.gif'; }
 $title = $request->Items->Item->ItemAttributes->Title;
-$creator = $request->Items->Item->ItemAttributes->Author;
+//set creator using conditional check for value in two different XML nodes
+$creator = 
+        (!empty($request->Items->Item->ItemAttributes->Author)) ? $request->Items->Item->ItemAttributes->Author :
+        ((empty($request->Items->Item->ItemAttributes->Author) ? $request->Items->Item->ItemAttributes->Director :
+        '* Publisher Not Available'));
 //simple logic check for author and director values
-if (empty($creator)) {
+//$author = $request->Items->Item->ItemAttributes->Author;
+/*if (strlen($author) > 2) {
+        $creator = $author;
+} elseif (empty($author)) {
         $creator = $request->Items->Item->ItemAttributes->Director;
 } else {
         $creator = '* Creator Not Available';
-}
-$publisher = $request->Items->Item->ItemAttributes->Publisher;
+}*/
+//set publisher using conditional check for value in two different XML nodes
+$publisher = 
+        (!empty($request->Items->Item->ItemAttributes->Publisher)) ? $request->Items->Item->ItemAttributes->Publisher : 
+        ((empty($request->Items->Item->ItemAttributes->Publisher) ? $request->Items->Item->ItemAttributes->Label : 
+        '* Publisher Not Available'));
 //simple logic check for publisher and label values
-if (empty($publisher)) {
+/*$brand = $request->Items->Item->ItemAttributes->Publisher;
+if (strlen($brand) > 2) {
+        $publisher = $brand;
+} elseif (empty($brand)) {
         $publisher = $request->Items->Item->ItemAttributes->Label;
 } else {
         $publisher = '* Publisher Not Available';
-}
+}*/
 $asin = $request->Items->Item->ASIN;
 $uri = $request->Items->Item->DetailPageURL;
 $editorialReview = $request->Items->Item->EditorialReviews->EditorialReview->Content;
@@ -174,8 +188,7 @@ echo '<p><a class="bck" href="./index.php?view=search">new search</a></p>'."\n";
 //var_dump($request);
 //echo "</pre>";
 }
-else
-{
+else {
 //no search results
 echo '<h2 class="result">No results for your query <strong>"'.$q.'"</strong></h2>'."\n";
 echo '<p><a class="bck" href="./">Try a new search</a>.</p>'."\n";
