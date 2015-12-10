@@ -142,9 +142,11 @@ if (strlen($brand) > 2) {
         $publisher = '* Publisher Not Available';
 }*/
 $asin = $request->Items->Item->ASIN;
+$pages = $request->Items->Item->ItemAttributes->NumberOfPages;
+$date = $request->Items->Item->ItemAttributes->ReleaseDate;
 $uri = $request->Items->Item->DetailPageURL;
-$editorialReview = $request->Items->Item->EditorialReviews->EditorialReview->Content;
-$CustomerReviews = $request->Items->Item->CustomerReviews->IFrameURL;
+//$editorialReview = $request->Items->Item->EditorialReviews->EditorialReview->Content;
+//$customerReviews = $request->Items->Item->CustomerReviews->IFrameURL;
 
 //print out Amazon xml values as html
 echo '<h3>Hmmm... If you are reading...</h3>'."\n";
@@ -152,8 +154,8 @@ echo '<ul class="item" >'."\n";
 	echo '<li>'."\n";
 		echo '<img src="'.$image.'" />'."\n";
 		echo '<span class="meta"><strong>'.$title.'</strong>'."\n";
-		echo 'by '.$creator.'<br />'.$asin .' (isbn/asin)<br />'.$publisher.' <br /><a class="expand" href="'.$uri.'">Get full details</a></span>'."\n";
-		//echo '<p><a class="expand" href="'.html_entity_decode($CustomerReviews).'">Customer Reviews</a></p>'."\n";
+		echo 'by '.$creator.'<br />'.$pages.' pages, '.$date.'<br />'.$publisher.'<br /><a class="expand" href="'.$uri.'">Get full details</a></span>'."\n";
+		//echo '<p><a class="expand" href="'.html_entity_decode($customerReviews).'">Customer Reviews</a></p>'."\n";
 		//echo '<p><strong>Editorial review:</strong> '.html_entity_decode($editorialReview).'</p>'."\n";
 	echo '</li>'."\n";
 echo '</ul>'."\n";
