@@ -74,7 +74,7 @@ $params = array(
         "SearchIndex" => "Books",
         "Keywords" => "$q",
         "ResponseGroup" => "EditorialReview,Images,ItemAttributes,Reviews,Similarities",// we want images, item info, reviews, and similar items
-        "Sort" => "relevance"
+        "Sort" => "relevancerank"
 );
 
 // set current timestamp if not set
