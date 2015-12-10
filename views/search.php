@@ -67,15 +67,14 @@ $endpoint = 'webservices.amazon.com';
 $uri = '/onca/xml';
 
 $params = array(
-	"Service" => "AWSECommerceService",
-	"Operation" => "ItemSearch",
-	"AWSAccessKeyId" => "$aws_access_key_id",
-	"AssociateTag" => "$aws_associate_tag",
-	"SearchIndex" => "Books",
-	"Keywords" => "$q",
-	"ResponseGroup" => "EditorialReview,Images,ItemAttributes,RelatedItems,Reviews,Similarities",// we want images, item info, reviews, and related items
-	"RelationshipType" => "AuthorityTitle",
-	"Sort" => "relevancerank"
+        "Service" => "AWSECommerceService",
+        "Operation" => "ItemSearch",
+        "AWSAccessKeyId" => "$aws_access_key_id",
+        "AssociateTag" => "$aws_associate_tag",
+        "SearchIndex" => "Books",
+        "Keywords" => "$q",
+        "ResponseGroup" => "EditorialReview,Images,ItemAttributes,Reviews,Similarities",// we want images, item info, reviews, and similar items
+        "Sort" => "relevance"
 );
 
 // set current timestamp if not set
