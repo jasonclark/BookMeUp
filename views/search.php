@@ -10,7 +10,7 @@ $q = isset($_GET['q']) ? trim(strip_tags(urlencode($_GET['q']))) : null;
 //$lng = isset($_GET['lng']) ? $_GET['lng'] : null;
 //set default value for library collection to search - list available at http://www.oclc.org/contacts/libraries/
 //docs here - http://oclc.org/developer/documentation/worldcat-search-api/library-catalog-url
-$library = isset($_GET['library']) ? trim(strip_tags($_GET['library'])) : 'MZF';
+$library = isset($_GET['library']) ? trim(strip_tags($_GET['library'])) : 'YOUR-OCLC-LIBRARY-ID-HERE';
 
 if (is_null($q)): //show form and allow the user to search
 ?>
