@@ -12,7 +12,6 @@ $q = isset($_GET['q']) ? trim(strip_tags(urlencode($_GET['q']))) : null;
 //docs here - http://oclc.org/developer/documentation/worldcat-search-api/library-catalog-url
 $library = isset($_GET['library']) ? trim(strip_tags($_GET['library'])) : 'YOUR-OCLC-LIBRARY-ID-HERE';
 
-if (is_null($q)): //show form and allow the user to search
 ?>
 
 <form id="searchBox" method="get" action="./index?view=search">
@@ -34,28 +33,8 @@ var submit = document.getElementById('btn');
 </script>
 
 <?php
-else: //if form has query, show form and process
-?>
+if (!is_null($q)): //if form has value, run query and show recommendations
 
-<form id="searchBox" method="get" action="./index?view=search">
-<fieldset>
-<label class="hidden" for="q">Search</label>
-<input type="text" maxlength="200" name="q" id="q" tabindex="1" placeholder="keyword, isbn, title..." autofocus />
-<button type="submit" id="btn" class="button">Search</button>
-</fieldset>
-</form>
-<p id="message" style="display:none"><img src="./meta/img/loading.gif" id="loading" /> Time to make the donuts...</p>
-<script>
-window.onload = function() {
-var submit = document.getElementById('btn');
-	submit.onclick = function() {
-		var msg = document.getElementById("message");
-		msg.style.display = 'block';
-	}
-}
-</script>
-
-<?php
 // your AWS Access Key ID, as taken from the AWS Your Account page
 $aws_access_key_id = 'YOUR-AMAZON-PRODUCT-ADVERTISING-PUBLIC-API-KEY-HERE';
 // your AWS Secret Key corresponding to the above ID, as taken from the AWS Your Account page
