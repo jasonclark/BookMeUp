@@ -16,9 +16,9 @@ $library = isset($_GET['library']) ? trim(strip_tags($_GET['library'])) : 'YOUR-
 
 <form id="searchBox" method="get" action="./index?view=search">
 <fieldset>
-<label class="hidden" for="q">Search</label>
-<input type="text" maxlength="200" name="q" id="q" tabindex="1" placeholder="keyword, isbn, title..." autofocus />
-<button type="submit" id="btn" class="button">Search</button>
+	<label class="hidden" for="q">Search</label>
+	<input type="text" maxlength="200" name="q" id="q" tabindex="1" placeholder="keyword, isbn, title..." autofocus />
+	<button type="submit" id="btn" class="button">Search</button>
 </fieldset>
 </form>
 <p id="message" style="display:none"><img src="./meta/img/loading.gif" alt="loading" id="loading" /> Time to make the donuts...</p>
@@ -35,13 +35,13 @@ var submit = document.getElementById('btn');
 <?php
 if (!is_null($q)): //if form has value, run query and show recommendations
 
-// your AWS Access Key ID, as taken from the AWS Your Account page
+//your AWS Access Key ID, as taken from the AWS Your Account page
 $aws_access_key_id = 'YOUR-AMAZON-PRODUCT-ADVERTISING-PUBLIC-API-KEY-HERE';
-// your AWS Secret Key corresponding to the above ID, as taken from the AWS Your Account page
+//your AWS Secret Key corresponding to the above ID, as taken from the AWS Your Account page
 $aws_secret_key = 'YOUR-AMAZON-PRODUCT-ADVERTISING-PRIVATE-API-KEY-HERE';
-// your Amazon Associate tag, as taken from the Amazon Affiliates page
+//your Amazon Associate tag, as taken from the Amazon Affiliates page
 $aws_associate_tag = 'YOUR-AMAZON-ASSOCIATES-TAG-HERE';
-// the region you are interested in
+//the region you are interested in
 $endpoint = 'webservices.amazon.com';
 $uri = '/onca/xml';
 
@@ -56,12 +56,12 @@ $params = array(
         "Sort" => "relevancerank"
 );
 
-// set current timestamp if not set
+//set current timestamp if not set
 if (!isset($params["Timestamp"])) {
 	$params["Timestamp"] = gmdate('Y-m-d\TH:i:s\Z');
 }
 
-// sort the parameters by key
+//sort the parameters by key
 ksort($params);
 
 $pairs = array();
@@ -70,16 +70,16 @@ foreach ($params as $key => $value) {
 	array_push($pairs, rawurlencode($key)."=".rawurlencode($value));
 }
 
-// generate the canonical query
+//generate the canonical query
 $canonical_query_string = join("&", $pairs);
 
-// generate the string to be signed
+//generate the string to be signed
 $string_to_sign = "GET\n".$endpoint."\n".$uri."\n".$canonical_query_string;
 
-// generate the signature required by the Product Advertising API
+//generate the signature required by the Product Advertising API
 $signature = base64_encode(hash_hmac("sha256", $string_to_sign, $aws_secret_key, true));
 
-// generate the signed URL
+//generate the signed URL
 $request_url = 'http://'.$endpoint.$uri.'?'.$canonical_query_string.'&Signature='.rawurlencode($signature);
 //echo "Signed URL: \"".$request_url."\"";
 
@@ -87,7 +87,7 @@ $request=simplexml_load_file($request_url) or die ('API response not loading');
 
 if($request->Items->TotalResults > 0) {
 
-// we have at least one response
+//we have at least one response
 //set Amazon xml values as specifc variables to be printed out below
 $image = $request->Items->Item->SmallImage->URL;
 if (empty($image)) { $image = './meta/img/thumbnail-default.gif'; }
