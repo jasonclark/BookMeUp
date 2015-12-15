@@ -163,10 +163,6 @@ if ($request->Items->Item->SimilarProducts->SimilarProduct == null) {
 }
 echo '</ul>'."\n";
 echo '<p><a class="bck" href="./index.php?view=search">new search</a></p>'."\n";
-//print out Amazon xml array for teaching purposes, next 3 lines should be removed in production environment
-//echo "<pre>";
-//var_dump($request);
-//echo "</pre>";
 }
 else {
 //no search results
