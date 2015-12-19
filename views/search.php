@@ -131,7 +131,7 @@ $uri = $request->Items->Item->DetailPageURL;
 echo '<h3>Hmmm... If you are reading...</h3>'."\n";
 echo '<ul class="item" >'."\n";
 	echo '<li>'."\n";
-		echo '<img src="'.$image.'" />'."\n";
+		echo '<img alt="'.$title.', book cover" src="'.$image.'" />'."\n";
 		echo '<span class="meta"><strong>'.$title.'</strong>'."\n";
 		echo 'by '.$creator.'<br />'.$pages.' pages, '.$date.'<br />'.$publisher.'<br /><a class="expand" href="'.$uri.'">Get full details</a></span>'."\n";
 		//echo '<p><a class="expand" href="'.html_entity_decode($customerReviews).'">Customer Reviews</a></p>'."\n";
@@ -155,8 +155,8 @@ if ($request->Items->Item->SimilarProducts->SimilarProduct == null) {
 			$thumbnail = './meta/img/thumbnail-default.gif';
 		}
 	echo '<li>'."\n";
-		echo '<img src="'.$thumbnail.'" />'."\n";
-		echo '<span class="meta"><strong>'.html_entity_decode($related->Title).'</strong>'."\n";
+		echo '<img alt="'.$related->Title.', book cover" src="'.$thumbnail.'" />'."\n";
+		echo '<span class="meta"><strong>'.$related->Title.'</strong>'."\n";
 		echo '<br /><a class="expand" href="./index?view=item&id='.$related->ASIN.'">Check Worldcat</a></span>'."\n";
 	echo '</li>'."\n";
 	}
