@@ -47,14 +47,14 @@ echo '<script type="text/javascript" src="'.$customScript[$i].'"></script>'."\n"
 <div id="doc">
 	<div id="hd">
 	<h1><?php echo $pageTitle.' '. $subTitle; ?></h1>
-	<ul id="nav">
-		<li id="tab1"><a accesskey="1" class="icon-search" href="./index?view=search">Suggest</a></li>
-		<li id="tab2"><a accesskey="2" class="icon-map" href="./index?view=where">Where</a></li>
-		<li id="tab3"><a accesskey="3" class="icon-info-circle" href="./index?view=about">What</a></li>
+	<ul id="nav" role="tablist">
+		<li role="tab" aria-controls="main" id="tab1"><a accesskey="1" class="icon-search" href="./index?view=search">Suggest</a></li>
+		<li role="tab" aria-controls="main" id="tab2"><a accesskey="2" class="icon-map" href="./index?view=where">Where</a></li>
+		<li role="tab" aria-controls="main" id="tab3"><a accesskey="3" class="icon-info-circle" href="./index?view=about">What</a></li>
 	</ul><!-- end nav list -->
 	</div><!-- end hd div -->
-	<div id="main">
-    	<?php include "switch.php"; ?>
+	<div role="tabpanel" id="main">
+		<?php include "switch.php"; ?>
 	</div><!-- end main div -->
 	<div id="ft">
 	<p class="info">
