@@ -18,7 +18,7 @@ $customCSS = 'none';
 <meta http-equiv="Cache-control" content="max-age=2592000, public" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title><?php echo $pageTitle.' '.$subTitle; ?></title>
-<meta property="description" content="BookMeUp uses the Amazon Product Advertising API to suggest related books to read based on a user's location and/or search query."/>
+<meta name="description" content="BookMeUp uses the Amazon Product Advertising API to suggest related books to read based on a user's location and/or search query."/>
 <meta property="og:title" content="<?php echo $pageTitle.' '.$subTitle; ?>"/>
 <meta property="og:description" content="BookMeUp uses the Amazon Product Advertising API to suggest related books to read based on a user's location and/or search query."/>
 <meta property="og:image" content="http://www.lib.montana.edu/beta/bookme/meta/img/bookmeup-share-default.png"/>
