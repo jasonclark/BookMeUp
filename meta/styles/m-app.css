@@ -1,5 +1,7 @@
-/*Styles for mobile library site | Author: Jason A. Clark | Version: mobile 1.0, November 2009*/
+/*Styles for mobile library site | Author: Jason A. Clark | Version: mobile 1.1, December 2015*/
 /* =global settings */
+html {box-sizing:border-box;}
+*, *:before, *:after {box-sizing:inherit;}
 html {font-family:"Open Sans",sans-serif;overflow-y:scroll;border-bottom:2.5em solid #063053;}
 body {font-size:62.5%;font-weight:normal;margin:0;padding:0;overflow-x:hidden;color:#444;}
 *, * focus {outline:none;margin:0;padding:0;}
