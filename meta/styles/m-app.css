@@ -7,6 +7,7 @@ body {font-size:62.5%;font-weight:normal;margin:0;padding:0;overflow-x:hidden;co
 *, * focus {outline:none;margin:0;padding:0;}
 a:link {text-decoration:none; color:#444;}
 a:visited {text-decoration:none; color:#444;}
+a,button,input,select,textarea,label,summary {touch-action:manipulation;}
 /* =element-specific settings */
 #doc, #hd {width:100%;margin:0;padding:0;}
 #main {padding:15px 10px 0 10px;width:auto;min-height:250px;/*height:100vh;*/}
