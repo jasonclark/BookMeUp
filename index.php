@@ -27,7 +27,7 @@ $customCSS = 'none';
 <meta name="twitter:creator" property="og:site_name" content="@jaclark"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:site" content="http://www.jasonclark.info"/>
-<link rel="apple-touch-icon" href="./meta/img/msu-mobile.png"/>
+<link rel="apple-touch-icon" href="./meta/img/manifest.png"/>
 <link rel="manifest" href="manifest.json"/>
 <!--<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
 <link href="https://experimental.worldcat.org/" rel="preconnect" crossorigin />-->
