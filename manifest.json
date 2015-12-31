@@ -1,0 +1,14 @@
+{
+	"lang": "en",
+	"background_color": "#063053",
+	"name": "BookMeUp @ The Library",
+	"short_name": "BookMeUp",
+	"display": "standalone",
+	"icons": [
+		{
+		"src": "./meta/img/manifest.png",
+		"sizes": "144x144",
+		"type": "image/png"
+		}
+	]
+}
