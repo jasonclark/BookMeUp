@@ -1,8 +1,14 @@
 {
+	"default_locale": "en",
 	"lang": "en",
 	"background_color": "#063053",
 	"name": "BookMeUp @ The Library",
 	"short_name": "BookMeUp",
+	"description": "BookMeUp uses the Amazon Product Advertising API to suggest related books to read based on a user's location and/or search query.",
+	"developer": {
+		"name": "Jason A. Clark",
+		"url": "http://www.jasonclark.info"
+	},
 	"display": "standalone",
 	"icons": [
 		{
