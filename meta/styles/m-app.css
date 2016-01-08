@@ -48,6 +48,7 @@ input,select {vertical-align:middle;border-width:0;-webkit-appearance:none;-moz-
 fieldset {border:0 none;}
 form#searchBox {position:relative;width:100%;height:30px;background-color:#fff;border:1px solid #ddd;border-radius:3px;}
 #searchBox input {position:absolute;top:3px;left:0;margin:0 3px;padding:0;width:90%;line-height:25px;height:25px;font-size:1.4em;border:0;-webkit-appearance:none;}
+#searchBox input:-webkit-autofill {-webkit-box-shadow:0 0 0 1000px white inset;}
 #searchBox button {position:absolute;top:0;right:0;cursor:pointer;margin:0;padding:0;width:30px;height:30px;float:left;background: url('../img/search.gif') no-repeat 50% 50%;text-indent:-999em;border:1px solid #ddd;border-radius:3px;}
 
 /* =tabbed nav */
