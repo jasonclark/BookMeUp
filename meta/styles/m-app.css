@@ -52,7 +52,7 @@ form#searchBox {position:relative;width:100%;height:32px;background-color:#fff;b
 #searchBox button {position:absolute;top:0;right:0;cursor:pointer;margin:0;padding:0;width:30px;height:30px;float:left;background: url('../img/search.gif') no-repeat 50% 50%;text-indent:-999em;border:1px solid #ddd;border-radius:3px;}
 
 /* =tabbed nav */
-#nav {zoom:1px;margin-left:0;list-style:none;border-bottom:1px solid #ddd;}
+#nav {margin:16px 0 0 0;list-style:none;border-bottom:1px solid #ddd;}
 #nav:before,#nav:after {display:table;content:"";}
 #nav:after {clear:both;}
 #nav > li {float:left;margin-bottom:-1px;margin-left:5px;font-size:1.6em;}
