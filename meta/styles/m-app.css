@@ -2,7 +2,7 @@
 /* =global settings */
 html {box-sizing:border-box;}
 *, *:before, *:after {box-sizing:inherit;}
-html {font-family:"Open Sans",sans-serif;overflow-y:scroll;border-bottom:5em solid #063053;}
+html {font-family:"Open Sans",sans-serif;overflow-y:scroll;border-bottom:4.8em solid #063053;}
 body {font-size:62.5%;font-weight:normal;margin:0;padding:0;overflow-x:hidden;color:#444;}
 *, * focus {outline:none;margin:0;padding:0;}
 a:link {text-decoration:none; color:#444;}
