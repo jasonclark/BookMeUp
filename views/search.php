@@ -24,7 +24,7 @@ $library = isset($_GET['library']) ? trim(strip_tags($_GET['library'])) : 'YOUR-
 <p id="message" style="display:none"><img src="./meta/img/loading.gif" alt="loading" id="loading" /> Time to make the donuts...</p>
 <script>
 window.onload = function() {
-var submit = document.getElementById('btn');
+	var submit = document.getElementById('btn');
 	submit.onclick = function() {
 		var msg = document.getElementById("message");
 		msg.style.display = 'block';
