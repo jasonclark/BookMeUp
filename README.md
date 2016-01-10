@@ -40,7 +40,8 @@ To see this application running live, visit:
 http://www.lib.montana.edu/beta/bookme/
 
 
-== UPDATES ==
+== VERSION and UPDATES ==
 
 06/2012 - Alpha release.
 11/2013 - Beta release.
+01/2015 - Version 1.0 release.
