@@ -12,11 +12,10 @@ $customCSS = 'none';
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<!-- force latest IE rendering engine -->
-<meta http-equiv="x-ua-compatible" content="ie=edge" />
-<meta http-equiv="Cache-control" content="max-age=2592000, public" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta charset="utf-8"/>
+<meta http-equiv="x-ua-compatible" content="ie=edge"/>
+<meta http-equiv="Cache-control" content="max-age=2592000, public"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title><?php echo $pageTitle.' '.$subTitle; ?></title>
 <meta name="description" content="BookMeUp uses the Amazon Product Advertising API to suggest related books to read based on a user's location and/or search query."/>
 <meta property="og:title" content="<?php echo $pageTitle.' '.$subTitle; ?>"/>
@@ -31,11 +30,11 @@ $customCSS = 'none';
 <link rel="apple-touch-icon" href="./meta/img/manifest.png"/>
 <!--<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
 <link href="https://experimental.worldcat.org/" rel="preconnect" crossorigin />-->
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:700italic,400,700" rel="stylesheet" />
-<link href="./meta/styles/m-app.css" media="screen" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:700italic,400,700" rel="stylesheet"/>
+<link href="./meta/styles/m-app.css" media="screen" rel="stylesheet"/>
 <?php
 if ($customCSS != 'none') {
-echo '<link href="'.dirname($_SERVER['PHP_SELF']).'./meta/styles/'.$customCSS.'" media="screen" rel="stylesheet" type="text/css" />'."\n";
+echo '<link href="'.dirname($_SERVER['PHP_SELF']).'./meta/styles/'.$customCSS.'" media="screen" rel="stylesheet" type="text/css"/>'."\n";
 }
 if ($customScript) {
 $counted = count($customScript);
