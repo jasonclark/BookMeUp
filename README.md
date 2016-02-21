@@ -37,7 +37,7 @@ For some best practices and the basics of how this application works, visit:
 http://diginit.wordpress.com/2009/11/13/mobile-web-design-working-code-tips-best-practices/
 
 To see this application running live, visit:
-http://www.lib.montana.edu/beta/bookme/
+https://www.lib.montana.edu/labs/bookme/
 
 
 == VERSION and UPDATES ==
