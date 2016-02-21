@@ -19,7 +19,7 @@ NOTE: This web template is a foundation that has been tested on multiple mobile 
 It provides a jumping off point for mobile design, but you should feel free to customize to your 
 specific needs by editing the CSS and other files that make up the UI. 
 
-If you have any questions or suggestions, please contact me at http://www.lib.montana.edu/~jason/contact.php
+If you have any questions or suggestions, please contact me at https://www.lib.montana.edu/~jason/contact.html
 
 DIRECTIONS: 
 1. Download and unzip files.
@@ -31,7 +31,7 @@ DIRECTIONS:
 --------------
 
 More information and downloads for the project are available here:
-http://www.lib.montana.edu/~jason/files.php
+https://www.lib.montana.edu/~jason/code.php
 
 For some best practices and the basics of how this application works, visit:
 http://diginit.wordpress.com/2009/11/13/mobile-web-design-working-code-tips-best-practices/
