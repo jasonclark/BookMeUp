@@ -12,9 +12,9 @@ Sample code and files for creating a BookMeUp recommendation tool as a web site.
 
 ----------
 
-**DIRECTIONS:** 
- 1.Download and unzip files.
- 2. Open the /views/ directory.
+**DIRECTIONS**
+ 1. Download and unzip files.
+ 2.  Open the /views/ directory.
  3. Each file in the /views/ directory represents a view that is displayed when a tab is clicked.
  4. Edit the HTML files and add your web site info where needed.
  5. Save files and upload to a public web directory.
