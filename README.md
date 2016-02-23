@@ -13,11 +13,11 @@ Sample code and files for creating a BookMeUp recommendation tool as a web site.
 ----------
 
 **DIRECTIONS:** 
-Download and unzip files.
- 1. Open the /views/ directory.
- 2. Each file in the /views/ directory represents a view that is displayed when a tab is clicked.
- 3. Edit the HTML files and add your web site info where needed.
- 4. Save files and upload to a public web directory.
+ 1.Download and unzip files.
+ 2. Open the /views/ directory.
+ 3. Each file in the /views/ directory represents a view that is displayed when a tab is clicked.
+ 4. Edit the HTML files and add your web site info where needed.
+ 5. Save files and upload to a public web directory.
 
 NOTE: This web template is a foundation that has been tested on multiple mobile devices. It provides a jumping off point for mobile design, but you should feel free to customize to your specific needs by editing the CSS and other files that make up the UI. 
 
@@ -25,10 +25,9 @@ If you have any questions or suggestions, please contact me at https://www.lib.m
 
 ----------
 
-More information and downloads for the project are available here:
-https://www.lib.montana.edu/~jason/code.html
+More information and downloads for the project are available here: https://www.lib.montana.edu/~jason/code.html
 
-For some best practices and the basics of how this application works, visit:http://diginit.wordpress.com/2009/11/13/mobile-web-design-working-code-tips-best-practices/
+For some best practices and the basics of how this application works, visit: http://diginit.wordpress.com/2009/11/13/mobile-web-design-working-code-tips-best-practices/
 
 **VERSION and UPDATES**
  - 2012/06/01 - Alpha release. 
