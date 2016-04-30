@@ -1,12 +1,4 @@
-#make sure mod_rewrite is enabled for all rules below
-#Options +FollowSymLinks
-#RewriteEngine On
-#remove need to have .php extension in filename
-#RewriteCond %{REQUEST_FILENAME} !-f
-#RewriteCond %{REQUEST_FILENAME} !-d
-#RewriteRule ^(.*)$ $1.php [L,QSA]
-
-#allow cross-origin requests.
+# Allow cross-origin requests
 # https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS
 # http://enable-cors.org/
 # http://www.w3.org/TR/cors/
@@ -15,14 +7,18 @@
   Header set Access-Control-Allow-Origin "*"
 </IfModule>
 
-#make sure mod_rewrite is enabled for all rules below
-Options +FollowSymLinks
-RewriteEngine On
-
-#check for 200 header, legitimate url 
-RewriteCond %{ENV:REDIRECT_STATUS} 200
-RewriteRule .* - [L]
-
-#remove need to have .php extension in filename
-RewriteCond %{REQUEST_FILENAME}.php -f
-RewriteRule ^(.*)$ $1.php [L,QSA]
+<IfModule mod_rewrite.c>
+  #Options +FollowSymLinks
+  RewriteEngine On
+  # Redirect from the `http://` to the `https://` version of the URL.
+  # https://wiki.apache.org/httpd/RewriteHTTPToHTTPS
+  RewriteCond %{HTTPS} !=on
+  #RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+  #check for 200 header, legitimate url 
+  RewriteCond %{ENV:REDIRECT_STATUS} 200
+  RewriteRule .* - [L]
+  #remove need to have .php extension in filename
+  RewriteCond %{REQUEST_FILENAME}.php -f
+  RewriteRule ^(.*)$ $1.php [L,QSA]
+</IfModule>
