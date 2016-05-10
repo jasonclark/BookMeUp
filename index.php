@@ -47,7 +47,7 @@ echo '<script type="text/javascript" src="'.$customScript[$i].'"></script>'."\n"
 <body class="<?php echo $view; ?>">
 <div id="doc">
 	<div id="hd">
-	<h1><?php echo $pageTitle.' '. $subTitle; ?></h1>
+	<a href="./index?view=search"><h1><?php echo $pageTitle.' '. $subTitle; ?></h1></a>	
 	<ul id="nav" role="tablist">
 		<li role="presentation" aria-controls="main" id="tab1"><a accesskey="1" role="tab" class="icon-search" href="./index?view=search">Suggest</a></li>
 		<li role="presentation" aria-controls="main" id="tab2"><a accesskey="2" role="tab" class="icon-map" href="./index?view=where">Where</a></li>
