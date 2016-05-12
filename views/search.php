@@ -144,7 +144,8 @@ if ($request->Items->Item->SimilarProducts->SimilarProduct == null) {
 	echo '<li>We couldn\'t find related books. Try a more specific query.</li>'."\n";
 } else {
         foreach ($request->Items->Item->SimilarProducts->SimilarProduct as $related) {
-		$remoteImageUrl = 'http://covers.openlibrary.org/b/isbn/'.$related->ASIN.'-S.jpg';
+		$remoteImageUrl = 'https://syndetics.com/index.aspx?isbn='.$related->ASIN.'/sc.jpg';
+		//$remoteImageUrl = 'http://covers.openlibrary.org/b/isbn/'.$related->ASIN.'-S.jpg';
 		list($width, $height) = getimagesize($remoteImageUrl);
 		//echo $width;
 		if ($width > 30){
