@@ -27,6 +27,7 @@ $customCSS = 'none';
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:site" content="http://www.jasonclark.info"/>
 <link rel="preconnect" href="//experimental.worldcat.org" crossorigin/>
+<link rel="preconnect" href="//fonts.googleapis.com" crossorigin/>
 <link rel="preconnect" href="//syndetics.com" crossorigin/>
 <link rel="preconnect" href="//webservices.amazon.com" crossorigin/>
 <link rel="manifest" href="manifest.json"/>
