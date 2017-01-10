@@ -28,8 +28,8 @@ $customCSS = 'none';
 <meta name="twitter:site" content="http://www.jasonclark.info"/>
 <link rel="preconnect" href="//experimental.worldcat.org" crossorigin/>
 <link rel="preconnect" href="//fonts.googleapis.com" crossorigin/>
-<link rel="preconnect" href="//www.google-analytics.com"/>
-<link rel="preconnect" href="https://www.google-analytics.com"/>
+<link rel="preconnect" href="//www.google-analytics.com" crossorigin/>
+<link rel="preconnect" href="https://www.google-analytics.com" crossorigin/>
 <link rel="preconnect" href="//syndetics.com" crossorigin/>
 <link rel="preconnect" href="//webservices.amazon.com" crossorigin/>
 <link rel="manifest" href="manifest.json"/>
