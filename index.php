@@ -28,14 +28,13 @@ $customCSS = 'none';
 <meta name="twitter:site" content="http://www.jasonclark.info"/>
 <link rel="preconnect" href="//experimental.worldcat.org" crossorigin/>
 <link rel="preconnect" href="//fonts.googleapis.com" crossorigin/>
+<link rel="preconnect href="//fonts.gstatic.com" crossorigin/>
 <link rel="preconnect" href="//www.google-analytics.com" crossorigin/>
 <link rel="preconnect" href="https://www.google-analytics.com" crossorigin/>
 <link rel="preconnect" href="//syndetics.com" crossorigin/>
 <link rel="preconnect" href="//webservices.amazon.com" crossorigin/>
 <link rel="manifest" href="manifest.json"/>
 <link rel="apple-touch-icon" href="./meta/img/manifest.png"/>
-<!--<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
-<link href="https://experimental.worldcat.org/" rel="preconnect" crossorigin />-->
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:700italic,400,700" rel="stylesheet"/>
 <link href="./meta/styles/m-app.css" media="screen" rel="stylesheet"/>
 <?php
