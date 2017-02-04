@@ -51,23 +51,23 @@ echo '<script type="text/javascript" src="'.$customScript[$i].'"></script>'."\n"
 </head>
 <body class="<?php echo $view; ?>">
 <div id="doc">
-	<div id="hd">
-	<a href="./index?view=search"><h1><?php echo $pageTitle.' '. $subTitle; ?></h1></a>	
-	<ul id="nav" role="tablist">
-		<li role="presentation" aria-controls="main" id="tab1"><a accesskey="1" role="tab" class="icon-search" href="./index?view=search">Suggest</a></li>
-		<li role="presentation" aria-controls="main" id="tab2"><a accesskey="2" role="tab" class="icon-map" href="./index?view=where">Where</a></li>
-		<li role="presentation" aria-controls="main" id="tab3"><a accesskey="3" role="tab" class="icon-info-circle" href="./index?view=about">What</a></li>
-	</ul><!-- end nav list -->
-	</div><!-- end hd div -->
-	<div role="tabpanel" id="main">
-		<?php include "switch.php"; ?>
-	</div><!-- end main div -->
-	<div id="ft">
-	<p class="info">
-		<a accesskey="4" class="site icon-browser" title="full site" href="/index.php">MSU Library</a>
-		<a accesskey="5" class="worldcat" title="powered by worldcat.org" href="http://www.worldcat.org/">Worldcat</a>
-	</p>
-	</div><!-- end ft div -->
+  <div id="hd">
+  <a href="./index?view=search"><h1><?php echo $pageTitle.' '. $subTitle; ?></h1></a>	
+  <ul id="nav" role="tablist">
+    <li role="presentation" aria-controls="main" id="tab1"><a accesskey="1" role="tab" class="icon-search" href="./index?view=search">Suggest</a></li>
+    <li role="presentation" aria-controls="main" id="tab2"><a accesskey="2" role="tab" class="icon-map" href="./index?view=where">Where</a></li>
+    <li role="presentation" aria-controls="main" id="tab3"><a accesskey="3" role="tab" class="icon-info-circle" href="./index?view=about">What</a></li>
+  </ul><!-- end nav list -->
+  </div><!-- end hd div -->
+  <div role="tabpanel" id="main">
+    <?php include "switch.php"; ?>
+  </div><!-- end main div -->
+  <div id="ft">
+  <p class="info">
+    <a accesskey="4" class="site icon-browser" title="full site" href="/index.php">MSU Library</a>
+    <a accesskey="5" class="worldcat" title="powered by worldcat.org" href="http://www.worldcat.org/">Worldcat</a>
+  </p>
+  </div><!-- end ft div -->
 </div><!-- end doc div -->
 </body>
 </html>
