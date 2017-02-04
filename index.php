@@ -33,6 +33,7 @@ $customCSS = 'none';
 <link rel="preconnect" href="https://www.google-analytics.com" crossorigin/>
 <link rel="preconnect" href="//syndetics.com" crossorigin/>
 <link rel="preconnect" href="//webservices.amazon.com" crossorigin/>
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.lib.montana.edu/labs/bookme/opensearch.xml" title="Search - BookMeUp"/>
 <link rel="manifest" href="manifest.json"/>
 <link rel="apple-touch-icon" href="./meta/img/manifest.png"/>
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:700italic,400,700" rel="stylesheet"/>
