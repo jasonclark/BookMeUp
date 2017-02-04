@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+  <ShortName>BookMeUp</ShortName>
+  <LongName>Search - BookMeUp</LongName>
+  <Description>Search BookMeUp for book and content recommendations</Description>
+  <Tags>books recommendations algorithms</Tags>
+  <Url type="text/html" rel="results" template="https://www.lib.montana.edu/labs/bookme/index?q={searchTerms}"/>
+  <Image width="16" height="16">https://www.lib.montana.edu/~jason/favicon.ico</Image>
+  <Query role="example" searchTerms="harry potter" />
+  <Developer>https://github.com/jasonclark</Developer>
+  <Attribution>Search data copyright Jason A. Clark</Attribution>
+  <SyndicationRight>open</SyndicationRight>
+  <AdultContent>false</AdultContent>  
+  <Language>en-us</Language>
+  <InputEncoding>UTF-8</InputEncoding>
+  <OutputEncoding>UTF-8</OutputEncoding>
+</OpenSearchDescription>
