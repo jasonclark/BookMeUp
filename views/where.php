@@ -1,6 +1,6 @@
 	<h2 class="result">Local topics for BookMeUp</h2>
 	<p id="message" style="display:none"><img src="./meta/img/loading.gif" id="loading" /> Waiting for Godot...</p>
-	<p class="terms"> </p>
+	<p id="terms" class="terms"> </p>
 <script id="worker" type="text/javascript">
 const msg = document.getElementById("message");
 if (navigator.geolocation) {
